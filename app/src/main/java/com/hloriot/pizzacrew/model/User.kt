@@ -3,13 +3,14 @@ package com.hloriot.pizzacrew.model
 import com.hloriot.pizzacrew.model.interfaces.IIngredient
 import com.hloriot.pizzacrew.model.interfaces.IUser
 
-class User : IUser {
+class User(private val name: String, private val password: String) : IUser {
+
     override fun getName(): String {
-        TODO("Not yet implemented")
+        return name
     }
 
     override fun getPassword(): String {
-        TODO("Not yet implemented")
+        return password
     }
 
     /**
@@ -20,7 +21,7 @@ class User : IUser {
             name: String,
             password: String
         ): IUser {
-            TODO("Not yet implemented")
+            return User(name, password)
         }
     }
 }

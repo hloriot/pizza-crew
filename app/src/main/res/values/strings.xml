@@ -3,4 +3,18 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="pizza_price_value">%1$.2f €</string>
+    <string name="login_fields_title"><u>Login</u></string>
+    <string name="login_fields_username">Username</string>
+    <string name="login_fields_password">Password</string>
+    <string name="login_login_button">go</string>
+    <string name="login_create_account"><u>No account?</u></string>
+    <string name="create_account_fields_title">Create an account</string>
+    <string name="create_account_create_button">Create</string>
+    <string name="create_account_login"><u>Already an account?</u></string>
+    <string name="login_error_empty_username">Username cannot be empty</string>
+    <string name="login_error_empty_password">Password cannot be empty</string>
+    <string name="login_error_invalid_credentials">Username or password incorrect</string>
+    <string name="create_account_success_message">Account successfully created</string>
 </resources>

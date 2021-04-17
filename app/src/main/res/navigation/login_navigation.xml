@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/navigation_login_fragment">
+
+    <fragment
+        android:id="@+id/navigation_login_fragment"
+        android:name="com.hloriot.pizzacrew.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/navigate_main_activity"
+            app:destination="@id/navigation_main_activity" />
+        <action
+            android:id="@+id/navigate_create_account_fragment"
+            app:destination="@id/navigation_create_account_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_account_fragment"
+        android:name="com.hloriot.pizzacrew.ui.login.CreateAccountFragment"
+        tools:layout="@layout/fragment_create_account">
+        <action
+            android:id="@+id/navigate_login_fragment"
+            app:destination="@id/navigation_login_fragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/navigation_main_activity"
+        android:name="com.hloriot.pizzacrew.MainActivity"
+        tools:layout="@layout/activity_main" />
+
+</navigation>

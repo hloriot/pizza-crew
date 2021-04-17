@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.PizzaCrew" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryVariant">@color/dark_red</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,4 +13,26 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.PizzaCrew.TextButton" parent="Widget.MaterialComponents.Button.TextButton"/>
+    <style name="Theme.PizzaCrew.RoundButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">20dp</item>
+    </style>
+
+    <style name="Theme.PizzaCrew.TextButton.Login" />
+    <style name="Theme.PizzaCrew.TextButton.Login.CreateAccount" />
+
+    <style name="Theme.PizzaCrew.RoundButton.Login" />
+    <style name="Theme.PizzaCrew.RoundButton.Login.Go" />
+
+    <style name="Theme.PizzaCrew.Login.Title" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="Theme.PizzaCrew.Login.Fields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+    <style name="Theme.PizzaCrew.Login.Fields.Username"/>
+    <style name="Theme.PizzaCrew.Login.Fields.Password"/>
+
+    <style name="Theme.PizzaCrew.PizzaItem"/>
+
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaTitle" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaIngredients" parent="TextAppearance.MaterialComponents.Headline6"/>
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaPrice" parent="TextAppearance.MaterialComponents.Headline5"/>
 </resources>

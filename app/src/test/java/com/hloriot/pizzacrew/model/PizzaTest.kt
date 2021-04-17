@@ -1,7 +1,5 @@
-package com.hloriot.pizzacrew
+package com.hloriot.pizzacrew.model
 
-import com.hloriot.pizzacrew.model.Ingredient
-import com.hloriot.pizzacrew.model.Pizza
 import com.hloriot.pizzacrew.model.interfaces.IIngredient
 import com.hloriot.pizzacrew.model.interfaces.PizzaDough
 import org.junit.Assert.assertEquals
