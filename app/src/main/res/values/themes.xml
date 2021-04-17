@@ -14,25 +14,61 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.PizzaCrew.TextButton" parent="Widget.MaterialComponents.Button.TextButton"/>
+    <style name="Theme.PizzaCrew.PrimaryOrange" parent="Theme.PizzaCrew">
+        <item name="colorPrimary">@color/orange</item>
+    </style>
+
+    <style name="Theme.PizzaCrew.TextButton" parent="Widget.MaterialComponents.Button.TextButton" />
+
     <style name="Theme.PizzaCrew.RoundButton" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">20dp</item>
     </style>
 
     <style name="Theme.PizzaCrew.TextButton.Login" />
-    <style name="Theme.PizzaCrew.TextButton.Login.CreateAccount" />
+
+    <style name="Theme.PizzaCrew.TextButton.Login.CreateAccount">
+        <item name="android:textColor">@color/white</item>
+    </style>
 
     <style name="Theme.PizzaCrew.RoundButton.Login" />
+
     <style name="Theme.PizzaCrew.RoundButton.Login.Go" />
 
-    <style name="Theme.PizzaCrew.Login.Title" parent="TextAppearance.MaterialComponents.Headline5"/>
-    <style name="Theme.PizzaCrew.Login.Fields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
-    <style name="Theme.PizzaCrew.Login.Fields.Username"/>
-    <style name="Theme.PizzaCrew.Login.Fields.Password"/>
+    <style name="Theme.PizzaCrew.Login" />
 
-    <style name="Theme.PizzaCrew.PizzaItem"/>
+    <style name="Theme.PizzaCrew.Login.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/red</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="android:theme">@style/Theme.PizzaCrew.PrimaryOrange</item>
+    </style>
 
-    <style name="Theme.PizzaCrew.PizzaItem.PizzaTitle" parent="TextAppearance.MaterialComponents.Headline5"/>
-    <style name="Theme.PizzaCrew.PizzaItem.PizzaIngredients" parent="TextAppearance.MaterialComponents.Headline6"/>
-    <style name="Theme.PizzaCrew.PizzaItem.PizzaPrice" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="Theme.PizzaCrew.Login.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.PizzaCrew.Login.Fields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="Theme.PizzaCrew.Login.Fields.Username" />
+
+    <style name="Theme.PizzaCrew.Login.Fields.Password" />
+
+    <style name="Theme.PizzaCrew.Login.EditText" parent="Widget.Design.TextInputEditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="Theme.PizzaCrew.Login.EditText.Username" />
+
+    <style name="Theme.PizzaCrew.Login.EditText.Password" />
+
+    <style name="Theme.PizzaCrew.PizzaItem" />
+
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaTitle" parent="TextAppearance.MaterialComponents.Headline5" />
+
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaIngredients" parent="TextAppearance.MaterialComponents.Headline6" />
+
+    <style name="Theme.PizzaCrew.PizzaItem.PizzaPrice" parent="TextAppearance.MaterialComponents.Headline5" />
 </resources>

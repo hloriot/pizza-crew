@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.hloriot.pizzacrew.R
 import com.hloriot.pizzacrew.database.UserDatabase
@@ -16,6 +17,9 @@ import com.hloriot.pizzacrew.model.User
 
 class CreateAccountFragment : Fragment() {
 
+    private val viewModel: CreateAccountViewModel by viewModels {
+        CreateAccountViewModel.Factory(requireContext())
+    }
     private lateinit var binding: FragmentCreateAccountBinding
 
     override fun onCreateView(
@@ -61,18 +65,34 @@ class CreateAccountFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            UserDatabase(
-                it.context.getSharedPreferences(
-                    UserDatabase.SHARED_PREFERENCES_NAME,
-                    Context.MODE_PRIVATE
-                )
-            ).storeUser(User.Factory.createUser(username, password))
-
-            binding.createAccountUsernameInputLayout.editText?.text = null
-            binding.createAccountPasswordInputLayout.editText?.text = null
-            Toast.makeText(it.context, R.string.create_account_success_message, Toast.LENGTH_LONG).show()
-            findNavController().navigateUp()
+            viewModel.storeUser(User.Factory.createUser(username, password))
+                .doOnSubscribe {
+                    showLoadingIndicator()
+                }
+                .subscribe {
+                    hideLoadingIndicator()
+                    binding.createAccountUsernameInputLayout.editText?.text = null
+                    binding.createAccountPasswordInputLayout.editText?.text = null
+                    Toast.makeText(it.context, R.string.create_account_success_message, Toast.LENGTH_LONG).show()
+                    findNavController().navigateUp()
+                }
         }
+    }
+
+    private fun showLoadingIndicator() {
+        binding.createAccountGoButton.visibility = View.INVISIBLE
+        binding.createAccountUsernameInputLayout.isEnabled = false
+        binding.createAccountPasswordInputLayout.isEnabled = false
+        binding.createAccountLoginButton.isEnabled = false
+        binding.loginProgressIndicator.show()
+    }
+
+    private fun hideLoadingIndicator() {
+        binding.createAccountGoButton.visibility = View.VISIBLE
+        binding.createAccountUsernameInputLayout.isEnabled = true
+        binding.createAccountPasswordInputLayout.isEnabled = true
+        binding.createAccountLoginButton.isEnabled = true
+        binding.loginProgressIndicator.hide()
     }
 
     private fun initTextEditListeners() {
