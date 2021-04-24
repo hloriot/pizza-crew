@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/orange">
-
+    tools:background="?attr/colorSecondary">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/login_cardview"
@@ -22,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:theme="@style/Theme.PizzaCrew.PrimaryOrange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -45,7 +45,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/Theme.PizzaCrew.Login.EditText.Username"
                     android:layout_width="match_parent"
-                    android:text="hello"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:lines="1" />
@@ -56,6 +55,7 @@
                 style="@style/Theme.PizzaCrew.Login.Fields.Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
                 android:layout_marginTop="8dp"
                 android:hint="@string/login_fields_password">
 

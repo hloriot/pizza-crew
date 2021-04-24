@@ -1,16 +1,15 @@
 package com.hloriot.pizzacrew.model
 
-import com.hloriot.pizzacrew.model.interfaces.IIngredient
 import com.hloriot.pizzacrew.model.interfaces.IUser
 
-class User(private val name: String, private val password: String) : IUser {
+class User : IUser {
 
     override fun getName(): String {
-        return name
+        TODO("Not yet implemented")
     }
 
     override fun getPassword(): String {
-        return password
+        TODO("Not yet implemented")
     }
 
     /**
@@ -21,7 +20,7 @@ class User(private val name: String, private val password: String) : IUser {
             name: String,
             password: String
         ): IUser {
-            return User(name, password)
+            TODO("Not yet implemented")
         }
     }
 }

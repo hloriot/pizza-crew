@@ -39,9 +39,9 @@
                 style="@style/Theme.PizzaCrew.Login.Fields.Username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/box_stroke_color"
                 android:layout_marginTop="8dp"
-                android:hint="@string/login_fields_username">
+                android:hint="@string/login_fields_username"
+                app:boxStrokeColor="@color/box_stroke_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/Theme.PizzaCrew.Login.EditText.Username"
@@ -57,7 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/login_fields_password">
+                android:hint="@string/login_fields_password"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/Theme.PizzaCrew.Login.EditText.Password"

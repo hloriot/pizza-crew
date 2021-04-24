@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hloriot.pizzacrew.R
 import com.hloriot.pizzacrew.databinding.ItemPizzaBinding
 import com.hloriot.pizzacrew.model.interfaces.IPizza
+import java.util.Locale
 
 class PizzaAdapter(initialList: List<IPizza> = emptyList()) :
     RecyclerView.Adapter<PizzaAdapter.PizzaViewHolder>() {
@@ -56,7 +57,16 @@ class PizzaAdapter(initialList: List<IPizza> = emptyList()) :
             itemPizzaBinding.apply {
                 pizzaName.text = pizza.getName()
                 pizzaIngredients.text = pizza.getIngredients().joinToString { it.getName() }
-                pizzaPrice.text = context.getString(R.string.pizza_price_value, pizza.getPriceInEuro())
+                pizzaPrice.text =
+                    context.getString(R.string.pizza_price_value, pizza.getPriceInEuro())
+                context.resources.getIdentifier(
+                    pizza.getName().toLowerCase(Locale.ROOT).replace(" ", "_"),
+                    "drawable", context.packageName
+                ).let {
+                    if (it != 0) {
+                        pizzaPicture.setImageResource(it)
+                    }
+                }
             }
         }
     }
